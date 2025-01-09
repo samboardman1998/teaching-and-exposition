@@ -1,1 +1,1 @@
-This repository consists of 
+This repository consists of a selection of teaching resources I have created to teach calculus courses at the University of Michigan and a sample of my technical writing, including graduate-level computer science concepts and my team's manuscript for a math modeling competition, for which we were recognized as a winning team. The teaching resources are also accompanied by their tex files and embedded figures to facilitate use by other instructors.  
