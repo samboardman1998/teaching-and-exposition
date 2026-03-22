@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} % Allows the use of theorems
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\newif\ifsol
+\soltrue
+
+\setlength{\parindent}{0pt}
+\usepackage[letterpaper, margin=1.0in]{geometry}
+
+\theoremstyle{definition} % Sets up a theorem style for theorem environments
+\newtheorem{example}{Example} % Sets up a new problem
+
+\title{MATH 116: Convergence Multiple Choice Problems}
+
+\author{Sam Boardman}
+
+\date{March 19, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In MATH 116, some problems that ask whether an improper integral or series converges or diverges will not give you an explicit improper integral or series, instead only revealing a few hints about the function being integrated or the sequence being added. Here's an example of such a problem: 
+
+\begin{example}\label{first_example}
+    If $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$, then $\displaystyle\sum_{n=1}^\infty a_n$ converges. \\\\ 
+    \textit{Circle one:} $\quad\quad\quad$ \textbf{ALWAYS} $\quad\quad\quad$ \textbf{SOMETIMES} $\quad\quad\quad$ \textbf{NEVER}
+\end{example}
+
+\vspace{20pt}
+
+Here is what each of the answer choices mean for this problem:
+
+\begin{itemize}
+    \item \textbf{ALWAYS}: All series $\displaystyle\sum_{n=1}^\infty a_n$ with $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$ converge
+    \item \textbf{SOMETIMES}: Some series $\displaystyle\sum_{n=1}^\infty a_n$ with $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$ converge and some diverge
+    \item \textbf{NEVER}: All series $\displaystyle\sum_{n=1}^\infty a_n$ with $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$ diverge
+\end{itemize}
+
+How can the answer be \textbf{SOMETIMES}? There are lots of choices of $a_n$ with $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$, like:
+
+\begin{itemize}
+    \item $a_n = \frac{1}{n}, \; n \geq 1$; or
+    \item $a_n = \frac{1}{n^2}, \; n \geq 1$; or 
+    \item $a_n = \frac{1}{e^n}, \; n \geq 1$; or
+    \item $a_n = 0, \; n \geq 1$; or...
+\end{itemize}
+
+It's possible that $\displaystyle\sum_{n=1}^\infty a_n$ converges for some of these choices of $a_n$ and diverges for other choices of $a_n$. \\
+
+In order to answer questions like this, we'll need to experiment with the answer options until we find one of them that is right:
+
+\begin{itemize}
+    \item If we can show that $\displaystyle\sum_{n=1}^\infty a_n$ converges with only the information given, the answer is \textbf{ALWAYS}
+    \item If we can show that $\displaystyle\sum_{n=1}^\infty a_n$ diverges with only the information given, the answer is \textbf{NEVER}
+    \item If we can find a choice of $a_n$ satisfying the information given such that $\displaystyle\sum_{n=1}^\infty a_n$ converges and another choice of $a_n$ satisfying the information given such that $\displaystyle\sum_{n=1}^\infty a_n$ diverges, the answer is \textbf{SOMETIMES} 
+\end{itemize}
+
+In this example, the information we are given is $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$. Let's test each of the answer options:
+
+\begin{itemize}
+    \item Since we want to try showing convergence and are given inequalities, the comparison test comes to mind. We need an upper bound for $a_n$, and we are given $a_n \leq \frac{1}{n}$ for $n \geq 1$. Unfortunately, $\displaystyle\sum_{n=1}^\infty \frac{1}{n}$ diverges, so we can't conclude convergence.
+    \item Since we next want to try showing divergence and are given inequalities, the comparison test is still relevant. We need a lower bound for $a_n$, and we are given $a_n \geq 0$ for $n \geq 1$. Unfortunately, $\displaystyle\sum_{n=1}^\infty 0$ converges, so we can't conclude divergence.
+    \item Since we couldn't show convergence or divergence, let's try finding examples of both! If we let $a_n = \frac{1}{n}, \; n \geq 1$, then $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$, and $\displaystyle\sum_{n=1}^\infty a_n$ diverges by the $p$-test ($p = 1$). On the other hand, if we let $a_n = \frac{1}{n^2}, \; n \geq 1$, then $0 \leq a_n \leq \frac{1}{n}$ for $n \geq 1$, and $\displaystyle\sum_{n=1}^\infty a_n$ converges by the $p$-test ($p = 2$). Thus the answer is \textbf{SOMETIMES}.  
+\end{itemize}
+
+\textit{Answer:} \textbf{SOMETIMES} 
+
+\vspace{20pt}
+
+Remember that for these questions, you generally just need to circle the correct answer, so no need to write justification, and you are welcome to experiment with the answer options in any order based on even vague intuition for what the right answer is!
+
+\section{Reasoning with Provided Inequalities or Limits}
+
+Example \ref{first_example} illustrates the most common type of multiple choice problem for convergence, where we are given inequalities or limits that can potentially be used in one of the integral or series convergence tests we have learned. Here are some more worked examples:
+
+\begin{example}
+    If $b_n$ is positive for all $n \geq 1$ and $\displaystyle\lim_{n \to \infty} b_n\sqrt{e^n} = 17$, then $\displaystyle\sum_{n=1}^\infty b_n$ converges. \\\\ 
+    \textit{Circle one:} $\quad\quad\quad$ \textbf{ALWAYS} $\quad\quad\quad$ \textbf{SOMETIMES} $\quad\quad\quad$ \textbf{NEVER} 
+\end{example}
+
+\vspace{20pt}
+
+We are given a limit involving $b_n$ and another sequence $\sqrt{e^n}$. This is reminiscent of the limit comparison test, but in order to apply that test, we need the limit of the \textit{ratio} between $b_n$ and another sequence. Applying the arithmetic trick that dividing is the same as multiplying by the reciprocal, we have $$b_n\sqrt{e^n} = \frac{b_n}{\frac{1}{\sqrt{e^n}}},$$ so $$\displaystyle\lim_{n \to \infty} \frac{b_n}{\frac{1}{\sqrt{e^n}}} = 17.$$ Thus by the limit comparison test, $\displaystyle\sum_{n=1}^\infty b_n$ has the same convergence as $\displaystyle\sum_{n=1}^\infty \frac{1}{\sqrt{e^n}}$. Now $\frac{1}{\sqrt{e^n}} = e^{-\frac{1}{2}n}$, and $\displaystyle\sum_{n=1}^\infty e^{-\frac{1}{2}n}$ converges because it is a geometric series with ratio $e^{-\frac{1}{2}}$. Hence $\displaystyle\sum_{n=1}^\infty b_n$ converges. 
+
+\vspace{15pt}
+
+\textit{Answer:} \textbf{ALWAYS} \\
+
+\begin{example}
+    Suppose $f(x)$ is a continuous function and $\frac{1}{x^{2/5}} \leq f(x) \leq \frac{1}{x^{1/3}}$ for all $x \geq 1$. Then $\int_1^\infty (f(x))^2dx$ converges. \\\\ 
+    \textit{Circle one:} $\quad\quad\quad$ \textbf{ALWAYS} $\quad\quad\quad$ \textbf{SOMETIMES} $\quad\quad\quad$ \textbf{NEVER}
+\end{example}
+
+\vspace{20pt}
+
+We have an inequality using $f(x)$, but since the function we are integrating is $(f(x))^2$, we would want an inequality using $(f(x))^2$ to apply the comparison test. Because the function $h(t) = t^2$ is increasing for $t \geq 0$, bigger positive inputs give bigger squares, so we can just square each part of the given inequality: $$\left(\frac{1}{x^{2/5}}\right)^2 \leq (f(x))^2 \leq \left(\frac{1}{x^{1/3}}\right)^2.$$ Simplifying gives us: $$\frac{1}{x^{4/5}} \leq (f(x))^2 \leq \frac{1}{x^{2/3}}.$$ $\displaystyle\int_1^\infty \frac{1}{x^{4/5}}dx$ diverges by the $p$-test ($p = 4/5$), so by the comparison test, $\displaystyle\int_1^\infty (f(x))^2dx$ diverges.  
+
+\vspace{15pt}
+
+\textit{Answer:} \textbf{NEVER} 
+
+\section{Modifying the Assumptions for a Convergence Test}
+
+Another common type of multiple choice problem for convergence essentially modifies the set-up for one of the convergence tests we have learned and investigates if we can still apply it.
+
+\begin{example}\label{ast_example}
+    Let $c_n$ be an alternating sequence such that $\displaystyle\lim_{n \to \infty} c_n = 0$. Then $\displaystyle\sum_{n=1}^\infty c_n$ converges. 
+\end{example}
+
+\vspace{20pt}
+
+This statement is very similar to what the alternating series test says, \textit{except that} we no longer assume that $|c_{n+1}| < |c_n|$ for all $n \geq 1$. Normally the tests only require assumptions that are truly necessary to conclude convergence or divergence, so since we have removed an assumption, the answer shouldn't be \textbf{ALWAYS}. At the same time, it \textit{can} be the case that $|c_{n+1}| < |c_n|$ for all $n \geq 1$ as well, so the answer shouldn't be \textbf{NEVER}. \\
+
+Let's look for a choice of $c_n$ where we get convergence and another choice where we get divergence (which would force the answer to be \textbf{SOMETIMES}). \\ 
+
+If $c_n = \frac{(-1)^n}{n}, \; n \geq 1$, then $c_n$ is alternating and $\displaystyle\lim_{n \to \infty} c_n = 0$, satisfying the information given. Moreover, $|c_{n+1}| < |c_n|$ for all $n \geq 1$, allowing us to conclude by the alternating series test that $\displaystyle\sum_{n=1}^\infty c_n$ converges. \\
+
+If instead $$c_n = 
+\begin{cases}
+\frac{1}{(\frac{n+1}{2})} & \text{if } n \text{ is odd} \\
+\frac{-1}{(\frac{n}{2})^2} & \text{if } n \text{ is even}
+\end{cases},
+$$
+then the odd terms are the terms of $\displaystyle\sum_{n=1}^\infty \frac{1}{n}$ and the even terms are the terms of $\displaystyle\sum_{n=1}^\infty \frac{-1}{n^2}$. The first series has partial sums that become more positive without limit (since the series diverges to $\infty$) whereas the second series has partial sums that never become more negative than some constant $c$ (since the series converges to a negative number we can call $c$). Therefore, the partial sums of $\displaystyle\sum_{n=1}^\infty c_n$ become more positive without limit, implying that $\displaystyle\sum_{n=1}^\infty c_n$ diverges.   
+
+\vspace{15pt}
+
+\textit{Answer:} \textbf{SOMETIMES} \\
+
+\begin{example}
+    Let $d_n$ be a positive sequence and $g(x)$ be a continuous function such that $g(n) = d_n$ for all $n \geq 1$ and $\displaystyle\sum_{n=1}^\infty d_n$ converges. Further suppose that for each $n \geq 1$, $g(x)$ is either increasing or decreasing on $[n,n+1]$. Then $\displaystyle\int_1^\infty g(x)dx$ converges. \\\\ 
+    \textit{Circle one:} $\quad\quad\quad$ \textbf{ALWAYS} $\quad\quad\quad$ \textbf{SOMETIMES} $\quad\quad\quad$ \textbf{NEVER}  
+\end{example}
+
+\vspace{20pt}
+
+Concluding the convergence of an improper integral from a series (or vice versa) is exactly what the integral test does, but we no longer have the assumption that $g(x)$ is decreasing for $x \geq 1$. Nonetheless, if $d_n$ is a monotone decreasing sequence, then $g(x)$ would be decreasing for $x \geq 1$ (due to being decreasing on $[1,2],[2,3],[3,4],\dots$). In that case, we could use the integral test to conclude that the integral converges, so the answer should be \textbf{ALWAYS} or \textbf{SOMETIMES}. \\
+
+Note that in this example, we didn't completely remove an assumption from the integral test; we just replaced the assumption that $g(x)$ is decreasing with a more open-ended assumption, that $g(x)$ is increasing or decreasing between adjacent whole numbers. Unlike in Example \ref{ast_example}, then, the answer may be \textbf{ALWAYS}. To see if this is the case, we can think about why the integral test is true, which was that we could use the series to create Riemann sums that approximated the integral well. If we want to show that $\displaystyle\int_1^\infty g(x)dx = \displaystyle\lim_{b \to \infty} \int_1^b g(x)dx$ converges, we can find a Riemann sum that is an overestimate for $\displaystyle\int_1^b g(x)dx$ (where $b$ is a whole number) but whose limit as $b \to \infty$ exists. \\
+
+Set $\Delta x = 1$ so that there is a rectangle over each interval $[1,2],[2,3],\dots,[b-1,b]$. Because $g(x)$ is increasing or decreasing on each of these intervals, its maximum on each interval occurs at one of the endpoints, so the Riemann sum is $\max(d_1,d_2) + \max(d_2,d_3) + \max(d_3,d_4) + \cdots + \max(d_{b-1},d_b)$, which is an upper estimate: $\int_1^b g(x)dx \leq \max(d_1,d_2) + \max(d_2,d_3) + \max(d_3,d_4) + \cdots + \max(d_{b-1},d_b)$. We don't the maximum of, say, $d_1$ and $d_2$, but adding them yields a number bigger than either one individually, meaning $\max(d_1,d_2) \leq d_1 + d_2$. Accordingly, $\displaystyle\int_1^b g(x)dx \leq d_1 + 2d_2 + 2d_3 + \cdots + 2d_{b-1} + d_b \leq \displaystyle\sum_{n=1}^b 2d_n$. Finally, $$\int_1^\infty g(x)dx = \lim_{b \to \infty} \int_1^b g(x)dx \leq \lim_{b \to \infty} \sum_{n=1}^b 2d_n = \sum_{n=1}^\infty 2d_n,$$ where the series converges because $\displaystyle\sum_{n=1}^\infty d_n$ converges. Thus $\displaystyle\int_1^\infty g(x)dx$ converges.
+
+\vspace{15pt}
+
+\textit{Answer:} \textbf{ALWAYS} 
+
+\end{document}
